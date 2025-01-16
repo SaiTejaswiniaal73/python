@@ -1,0 +1,323 @@
+1. Create a function that takes two numbers as arguments and returns their sum.    
+
+def add_num(num1:int,num2:int)->int:
+  sum=num1+num2
+  return sum
+num1, num2 = 5, 15
+sum=add_num(num1,num2)
+print(f"The addition of {num1} and {num2} results {sum}.")
+num1, num2 = 5, 155
+sum=add_num(num1,num2)
+print(f"The addition of {num1} and {num2} results {sum}.")
+
+2. Write a function that takes an integer minutes and converts it to seconds.
+
+def min_sec(integer):
+  print(integer*60)
+min_sec(20)
+min_sec(2)
+or 
+def minutes_to_seconds(minutes: int) -> int:
+    return minutes * 60
+print(minutes_to_seconds(2))
+
+3. Create a function that takes two arguments. Both arguments are integers, a and b. Return true
+if one of them is 10 or if their sum is 10.
+
+def test(a:int,b:int):
+  sum=a+b
+  if (sum==10) or (a==10) or (b==10):
+    return True
+  else:
+    return False
+print(test(3,7))
+
+         or
+         
+def test(a:int,b:int):
+    return a == 10 or b == 10 or a + b == 10
+print(test(3,7))
+print(test(3,9))
+print(test(10,10))
+print(test(3,10))
+print(test(10,7))
+
+4. Create a function that takes two strings as arguments and returns either true or false
+depending on whether the total number of characters in the first string is equal to the tot
+number of characters in the second string.
+
+def check_len(str1,str2):
+  return len(str1)==len(str2)
+print(check_len("teja","swin"))
+print(check_len("teja","swini"))
+
+or 
+
+5. Create a function that takes an array of numbers and returns the largest number.
+Example:
+secondLargest([10, 40, 30, 20, 50]) ➞ 50
+
+def largest_number(numbers):
+    if not numbers:
+        return None  
+    return max(numbers)
+print(largest_number([10, 40, 30, 20, 50])) 
+
+6. Create a function that takes two strings as arguments and returns the number of times the fir
+character (the single character) is found in the second string.
+Example:
+charCount("c", "Chamber of secrets") ➞ 1
+
+def char_count(char,string):
+  result=string.count(char)
+  return result
+print(char_count("a","allampally"))
+
+or  
+
+def char_count(char,string):
+  return string.count(char)
+print(char_count("a","allampally"))
+print(char_count("a"," sfdghjk"))
+
+
+7. Create a function that takes a string and returns the number (count) of vowels contained
+within it.
+Example:
+countVowels("Celebration") ➞ 5
+
+def vowel_count(string):
+  count=0
+  for i in string:
+    if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u':
+        count+=1
+  if count == 0:
+       print('No vowels found')
+  else:
+       print('Total vowels are :' + str(count))
+
+vowel_count("tejaswini")
+
+
+8. Given a string, create a function to reverse the string.
+Example:
+
+reverseCase("Happy Birthday") ➞ "yadhtriB yppaH"
+
+def reverse_string(string):
+    return string[::-1]
+print(reverse_string("hello"))
+print(reverse_string("tetetezzz"))
+print(reverse_string("Happy Birthday"))
+
+9. Write a program that defines a function to multiply an integer by 2. Then, loop from 0 to a giv
+integer n, passing each value to the function and printing the result.
+Input: n=5
+Output: 2 4 6 8 10
+
+def multiply_by_two(n):
+    for i in range(1, n + 1):
+        print(i * 2,end=' ')
+multiply_by_two(5)
+
+10.Program to find greatest of three numbe
+Input: 4 8 2
+Output: 8 is greatest
+
+def max_num(a,b,c):
+  return max(a,b,c)
+print(max_num(2,3,4))
+print(max_num(4,8,2))
+
+11.Program to find factorial of numbe
+Input: n=5
+Output: 120
+
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+print(factorial(3))
+
+12.Calculate the Power of a Number(using loop only).
+Input: n=5, p=3
+Output: 5 ^ 3 = 125
+
+def calculate_power(base, exponent):
+    result = 1
+    for i in range(exponent):
+        result *= base
+    return result
+
+print(calculate_power(8, 3))
+print(calculate_power(5, 3))
+
+13.Program to Check Whether a Number is Prime or Not
+Input: 9
+Output: 9 is not a prime no
+
+def prime_(num):
+  if num > 1:
+  
+    for i in range(2, (num//2)+1):
+      
+        if (num % i) == 0:
+          print(num, "is not a prime number")
+          break
+        else:
+          print(num, "is a prime number")
+  else:
+    print(num, "is not a prime number")
+prime_(5)
+
+
+14.Program to find a missing number in first n natural num
+a. Input: n=5(length of array), arr= [5,3,1,4] Output: 2 is missing
+15.Program to insert an element in an array at a given index.
+Input: [1,2,3,4,5,7,8,9,10] , index=5, number = 6
+Output: [1,2,3,4,5,6,78,9,10]
+16.Count occurrence of number:
+a. Input: [1,6,3,1,5,9,7,2,1,9,3,7,8,9,10] , no_to_find
+b. Output: 7 present 2 times.
+Medium:
+1. Print Pattern using loop.
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+2. Create a function that takes an array of arrays with numbers. Return a new (single) array with
+the largest numbers of each.
+Example:
+findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]) ➞ [7, 90, 
+3. Create a function that takes an array of items, removes all duplicate items and returns a new
+array in the same sequential order as the old array (minus duplicates).
+Example:
+removeDups([1, 0, 1, 0]) ➞ [1, 0]
+removeDups(["The", "big", "cat"]) ➞ ["The", "big", "cat"]
+4. Program to arrange numbers in ascending order
+a. Input: [2,3,1,5,4]
+b. Output: [1,2,3,4,5]
+c. Sort the Array using loop only(you can not use predefined function
+5. Program to count vowels and consonants in a given String.
+a. Input: i am ram
+b. Output: 3 vowels 3 consonants
+2. Reverse a number using while Loop
+a. Input: 123
+b. Output: 321
+
+# 1. Function to return sum of two numbers
+def add_numbers(a, b):
+    return a + b
+
+# 2. Convert minutes to seconds
+def minutes_to_seconds(minutes):
+    return minutes * 60
+
+# 3. Check if one of the numbers is 10 or their sum is 10
+def check_ten(a, b):
+    return a == 10 or b == 10 or (a + b) == 10
+
+# 4. Compare lengths of two strings
+def compare_lengths(str1, str2):
+    return len(str1) == len(str2)
+
+# 5. Find the largest number in an array
+def largest_number(arr):
+    return max(arr)
+
+# 6. Count occurrences of a character in a string
+def char_count(char, string):
+    return string.lower().count(char.lower())
+
+# 7. Count vowels in a string
+def count_vowels(string):
+    vowels = 'aeiouAEIOU'
+    return sum(1 for char in string if char in vowels)
+
+# 8. Reverse a string
+def reverse_string(string):
+    return string[::-1]
+
+# 9. Multiply each number from 0 to n by 2
+def multiply_by_two(n):
+    for i in range(1, n + 1):
+        print(i * 2, end=' ')
+
+# 10. Find the greatest of three numbers
+def greatest_of_three(a, b, c):
+    return max(a, b, c)
+
+# 11. Find factorial of a number
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+# 12. Calculate the power of a number using loops
+def power(base, exp):
+    result = 1
+    for _ in range(exp):
+        result *= base
+    return result
+
+# 13. Check if a number is prime
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# 14. Find a missing number in the first n natural numbers
+def find_missing(n, arr):
+    return sum(range(1, n + 1)) - sum(arr)
+
+# 15. Insert an element at a given index in an array
+def insert_element(arr, index, num):
+    arr.insert(index, num)
+    return arr
+
+# 16. Count occurrences of a number in an array
+def count_occurrences(arr, num):
+    return arr.count(num)
+
+# Medium 1. Print a pattern
+def print_pattern(n):
+    for i in range(1, n + 1):
+        print(' '.join(map(str, range(1, i + 1))))
+
+# Medium 2. Find the largest numbers in an array of arrays
+def find_largest_nums(arr_of_arrs):
+    return [max(sublist) for sublist in arr_of_arrs]
+
+# Medium 3. Remove duplicates from an array
+def remove_duplicates(arr):
+    seen = set()
+    return [x for x in arr if not (x in seen or seen.add(x))]
+
+# Medium 4. Sort an array in ascending order using loops
+def sort_array(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+# Medium 5. Count vowels and consonants in a string
+def count_vowels_consonants(string):
+    vowels = 'aeiouAEIOU'
+    vowel_count = sum(1 for char in string if char in vowels)
+    consonant_count = sum(1 for char in string if char.isalpha() and char not in vowels)
+    return vowel_count, consonant_count
+
+# Medium 6. Reverse a number
+def reverse_number(num):
+    reversed_num = 0
+    while num > 0:
+        reversed_num = reversed_num * 10 + num % 10
+        num //= 10
+    return reversed_num
